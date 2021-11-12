@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# ./post_metrics /path/to/metrics 7 2
+# ./post_metrics /path/to/metrics 3 2
 
 DATA_DIR=$1
-RETENTION_DAYS="${2:-7}"
+RETENTION_DAYS="${2:-3}"
 HAS_PARALLEL=$(command -v parallel)
 PARALLEL_JOB_COUNT="-j ${3:-2}"
 
