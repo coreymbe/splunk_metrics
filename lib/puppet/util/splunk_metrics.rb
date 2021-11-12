@@ -13,7 +13,7 @@ require 'time'
 module Puppet::Util::Splunk_metrics
   def settings
     return @settings if @settings
-    @settings_file = Puppet[:confdir] + '/splunk_metrics.yaml'
+    @settings_file = Puppet[:confdir] + '/splunk_metrics/splunk_metrics.yaml'
 
     @settings = YAML.load_file(@settings_file)
   end

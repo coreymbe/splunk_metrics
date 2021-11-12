@@ -1,6 +1,4 @@
 ---
 "url" : "<%= $splunk_metrics::url %>"
 "token" : "<%= $splunk_metrics::token %>"
-<% if $splunk_metrics::pe_console{ -%>
 "pe_console" : "<%= $splunk_metrics::pe_console %>"
-<% } -%>
