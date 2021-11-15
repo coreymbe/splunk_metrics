@@ -24,7 +24,5 @@ if [ ! -n "$HAS_PARALLEL" ]
       do cat $f | /opt/puppetlabs/bin/puppet splunk_metrics --sourcetype puppet:metrics --pe_metrics -d
     done
   else
-    for f in $(find "$DATA_DIR" -name "*.json")
-      do cat $f | parallel --pipe $PARALLEL_JOB_COUNT "{} /opt/puppetlabs/bin/puppet splunk_metrics --sourcetype puppet:metrics --pe_metrics -d"
-    done
+    find $DATA_DIR -name "*.json" | parallel $PARALLEL_JOB_COUNT "cat {} | /opt/puppetlabs/bin/puppet splunk_metrics --sourcetype puppet:metrics --pe_metrics -d"
 fi
